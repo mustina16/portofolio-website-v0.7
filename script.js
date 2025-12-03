@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.toggle("dark");
         }
     });
-
+//feat: add interactivity//
     let count = 0;
     mainContent.addEventListener("click", () => {
         count++;
