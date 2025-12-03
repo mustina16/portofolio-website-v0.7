@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.toggle("dark");
         }
     });
-
+// commit update 3
     let count = 0;
     mainContent.addEventListener("click", () => {
         count++;
