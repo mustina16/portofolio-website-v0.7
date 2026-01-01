@@ -10,14 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (event) => {
-        if(event.key === "h") {
+        if(event.key === "d") {
             document.body.classList.toggle("dark");
         }
     });
-//feat: add interactivity//
+
     let count = 0;
     mainContent.addEventListener("click", () => {
         count++;
         aside.textContent = `kamu klik konten ini sebanyak ${count} kali`;
-    })
+    });
+    
+    document.getElementById('btn').addEventListener('click', function() {
+        fetch('/api/info').then(response => response.json()).then(data => {
+            const formatwaktu = new Date(data.waktu).toLocaleString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('timeDisplay').textContent = formatwaktu;  
+        });
+    });
 });
